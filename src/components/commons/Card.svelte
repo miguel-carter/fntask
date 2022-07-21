@@ -3,11 +3,11 @@
 </div>
 
 <style>
-      .card {
+    .card {
         min-height: 20px;
         background-color: var(--bg-subdue);
         color: var(--color-subdue);
-        margin-bottom: var(--sm-padding);
+        margin-bottom: 1px;
         padding: var(--sm-padding);
     }
 </style>

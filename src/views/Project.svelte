@@ -2,26 +2,34 @@
     export let active;
     export let name;
     export let type;
-    import Card from "../components/commons/Card.svelte";
+    import List from "../components/commons/List.svelte";
+    import ProjectCard from "../components/ProjectCard.svelte";
+    import TaskCard from "../components/TaskCard.svelte";
+    import ProjectActionBar from "../components/ProjectActionBar.svelte";
 
 </script>
 
 {#if active && name == type}
 <div class="wrapper">
     <div class="top">
-        <div class="left">
-            <Card/>
-            <Card/>
-            <Card/>
-        </div>
-        <div class="right">
-            <Card/>
-            <Card/>
-            <Card/>
-        </div>
+        <List>
+            {#each [1,1,1,1,1,1,1,1] as item}
+            <ProjectCard></ProjectCard>
+            {/each}
+            <button slot="controls">test</button>
+        </List>
+        <List>
+            {#each [] as item}
+            <TaskCard></TaskCard>>
+            {/each}
+            <button slot="controls">test</button>
+        </List>    
+    </div>
+    <div class="middle">
+        <ProjectActionBar/>
     </div>
     <div class="bottom">
-        test
+        <!-- graph here -->
     </div>
 </div>
 {/if}
@@ -31,8 +39,10 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: var(--md-padding);
+        overflow: auto;
     }
+
+
 
     .top, .bottom {
         flex: 1;
@@ -41,14 +51,6 @@
         max-height: 50%;
     }
 
-    .top > * {
-        flex: 1;
-        margin: var(--sm-padding);
-        overflow-y: scroll;
-    }
-
-    .top > .right {
-        flex: 2
-    }
+   
 
 </style>

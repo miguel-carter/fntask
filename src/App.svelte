@@ -41,12 +41,12 @@ viewState.subscribe((v) => views = v)
     width: 100vw;
     display: flex;
     flex-direction: row;
+    background-color: var(--bg);
   }
 
   .side {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
     border-right: 1px solid var(--subdue);
   }
 
@@ -54,7 +54,7 @@ viewState.subscribe((v) => views = v)
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
+   
   }
 
 </style>
