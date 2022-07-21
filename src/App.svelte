@@ -9,7 +9,7 @@ import Setting from "./views/Setting.svelte"
 let views;
 
 const viewState = writable([
-  {name: 'profile', icon: 'fa-building', active: true},
+  {name: 'profile', icon: 'fa-user', active: true},
   {name: 'projects', icon: 'fa-diagram-project', active: false},
   {name: 'board', icon: 'fa-rectangle-list', active: false},
   {name: 'settings', icon: 'fa-gear', active: false},
@@ -44,9 +44,6 @@ viewState.subscribe((v) => views = v)
   }
 
   .side {
-    height: 100vh;
-    width: 20vw;
-    min-width: 150px;
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
@@ -54,8 +51,9 @@ viewState.subscribe((v) => views = v)
   }
 
   .view {
-    height: 100vh;
-    width: 80vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg);
   }
 

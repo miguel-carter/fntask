@@ -16,8 +16,8 @@ function clickHandler(index) {
 <div class="wrapper">
     {#each views as view, i}
     <div on:click="{clickHandler.bind(this, i)}" class="{`item ${view.active ? 'active' : null}`}">
-        <i class="{`fa-solid ${view.icon}`}"></i>
-        <div class="item-content">
+        <i class="{`fa-solid ${view.icon}`}" style="width: 20%"></i>
+        <div>
            <p>{view.name}</p> 
         </div>
     </div>
@@ -27,7 +27,8 @@ function clickHandler(index) {
 <style>
     .wrapper {
         flex: 1;
-        padding: var(--md-padding)
+        padding: var(--md-padding);
+        min-width: 150px;
     }
 
     .item {
@@ -37,13 +38,9 @@ function clickHandler(index) {
         text-transform: capitalize;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
-    .item-content {
-        width: 85%;
-    }
 
     .active {
         color: var(--color);
