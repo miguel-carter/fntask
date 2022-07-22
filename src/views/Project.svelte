@@ -13,16 +13,14 @@
 <div class="wrapper">
     <div class="top">
         <List>
-            {#each [1,1,1,1,1,1,1,1] as item}
+            {#each [] as item}
             <ProjectCard></ProjectCard>
             {/each}
-            <button slot="controls">test</button>
         </List>
         <List>
             {#each [] as item}
             <TaskCard></TaskCard>>
             {/each}
-            <button slot="controls">test</button>
         </List>    
     </div>
     <div class="middle">
